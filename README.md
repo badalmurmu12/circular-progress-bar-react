@@ -1,1 +1,1 @@
-![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+![alt text](https://github.com/badalmurmu12/circular-progress-bar-react/blob/master/src/preview.png)
