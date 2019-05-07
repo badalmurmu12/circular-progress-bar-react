@@ -1,0 +1,25 @@
+#greycrcl:hover{
+  stroke: green;
+}
+
+#first{
+  cursor: pointer;
+}
+#first:hover{
+  stroke: green;
+}
+
+#second{
+  cursor: pointer;
+}
+#second:hover{
+  stroke: green;
+}
+
+
+#third{
+  cursor: pointer;
+}
+#third:hover{
+  stroke: green;
+}

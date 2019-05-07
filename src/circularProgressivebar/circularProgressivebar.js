@@ -27,7 +27,8 @@ render(){
     <div id="cont" data-pct="100">
         <div id="progress-val"> {this.state.bar} %</div>
       <svg id="svg" width="200" height="200" viewport="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <circle r="90" cx="100" cy="100" fill="transparent" strokeDasharray ="565.48" strokeDashoffset={this.state.strokeDashoffset}></circle>
+
+        <circle id="bar2" r="90" cx="100" cy="100" fill="transparent" strokeDasharray ="565.48" strokeDashoffset={this.state.strokeDashoffset}></circle>
         <circle id="bar" r="90" cx="100" cy="100" fill="transparent" strokeDasharray="565.48" strokeDashoffset={this.state.strokeDashoffset}></circle>
       </svg>
     </div>

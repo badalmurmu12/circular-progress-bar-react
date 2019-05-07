@@ -7,6 +7,9 @@
 #svg #bar {
   stroke: #FF9F1E;
 }
+#svg #bar2{
+  stroke: #fff;
+}
 #cont {
   display: block;
   height: 200px;
@@ -18,6 +21,32 @@
   transform: rotate(-90deg);
 }
 #cont:after {
+  position: absolute;
+  display: block;
+  height: 160px;
+  width: 160px;
+  left: 50%;
+  top: 50%;
+  box-shadow: inset 0 0 1em black;
+  content: 50%;
+  margin-top: -80px;
+  margin-left: -80px;
+  border-radius: 100%;
+  line-height: 160px;
+  font-size: 2em;
+  text-shadow: 0 0 0.5em black;
+}
+#cont1 {
+  display: block;
+  height: 300px;
+  width: 300px;
+  margin: 2em auto;
+  box-shadow: 0 0 1em black;
+  border-radius: 100%;
+  position: relative;
+  transform: rotate(-90deg);
+}
+#cont1:after {
   position: absolute;
   display: block;
   height: 160px;
