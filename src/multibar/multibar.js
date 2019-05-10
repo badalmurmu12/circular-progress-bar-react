@@ -24,53 +24,48 @@ class MultiBar extends React.Component {
           nda:181,
           upa:218,
           others:144
-        }
-
-      ]
+        }]
       }
-
  }
 
   render(){
-    return(<svg id="barchart" width="500px" height= "400px">
-              <line x1="50" y1="0" x2="50" y2="350" stroke="rgb(255,0,0)" stroke-width= "1"   opacity="0.6" />
-              <line x1="50" y1="350" x2="500" y2="350" stroke="rgb(255,0,0)" stroke-width= "1"   opacity="0.6" />
+      let maxwidth = 500;
+      let maxheight = 400;
+      let baseline = 50;
+
+    return(<svg id="barchart" width={maxwidth + 'px'} height= {maxheight + 'px'}>
+              <line x1={baseline} y1="0" x2={baseline} y2={maxheight - baseline} stroke="rgb(255,0,0)" stroke-width= "1"   opacity="0.6" />
+              <line  x1={baseline} y1={maxheight - baseline} x2={maxwidth} y2={maxheight - baseline}stroke="rgb(255,0,0)" stroke-width= "1"   opacity="0.6" />
               <g>
-              <line x1="50" y1="50" x2="500" y2="50" stroke="rgb(255,0,0)" stroke-width= "1" stroke-dasharray="4 1" opacity="0.6" />
-              <text  x="27" y= "53" fontSize="11" fontFamily="arial" fill="black"  >
-                  {400-100}
+                <line  x1="150px" y1="25" x2="175" y2="25"   stroke-width= "5" stroke="#ff9933"   opacity="1" />
+                <text  x="185" y="29"  fontSize="11" fontFamily="arial" fill="black"  >
+                  NDA
+                </text>
+             </g>
+
+             <g>
+               <line  x1="250px" y1="25" x2="275" y2="25"   stroke-width= "5" stroke="#00BFFF"   opacity="1" />
+               <text  x="285" y="29"  fontSize="11" fontFamily="arial" fill="black"  >
+                 UPA
+               </text>
+            </g>
+
+            <g>
+              <line  x1="350px" y1="25" x2="375" y2="25"   stroke-width= "5" stroke="#a7a2a2"   opacity="1" />
+              <text  x="385" y="29"  fontSize="11" fontFamily="arial" fill="black"  >
+                OTHERS
               </text>
-              </g>
-              <g>
-              <line x1="50" y1="150" x2="500" y2="150" stroke="rgb(255,0,0)" stroke-width= "1" stroke-dasharray="4 1" opacity="0.6" />
-              <text  x={27} y= {53+100} fontSize="11" fontFamily="arial" fill="black"  >
-                  {400-200}
-              </text>
-              </g>
-              <g>
-              <line x1="50" y1="100" x2="500" y2="100" stroke="rgb(255,0,0)" stroke-width= "1" stroke-dasharray="4 1" opacity="0.6" />
-              <text  x={27} y= {53+50} fontSize="11" fontFamily="arial" fill="black"  >
-                  {400-150}
-              </text>
-              </g>
-              <g>
-              <line x1="50" y1="200" x2="500" y2="200" stroke="rgb(255,0,0)" stroke-width= "1" stroke-dasharray="4 1" opacity="0.6" />
-              <text  x={27} y= {53+ 150} fontSize="11" fontFamily="arial" fill="black"  >
-                  {400-250}
-              </text>
-              </g>
-              <g>
-              <line x1="50" y1="250" x2="500" y2="250" stroke="rgb(255,0,0)" stroke-width= "1" stroke-dasharray="4 1" opacity="0.6" />
-              <text  x={27} y= {53+200} fontSize="11" fontFamily="arial" fill="black"  >
-                  {400-300}
-              </text>
-              </g>
-              <g>
-              <line x1="50" y1="300" x2="500" y2="300" stroke="rgb(255,0,0)" stroke-width= "1" stroke-dasharray="4 1" opacity="0.6" />
-              <text  x={27} y= {53+ 250} fontSize="11" fontFamily="arial" fill="black"  >
-                  {400-350}
-              </text>
-              </g>
+           </g>
+
+              {[...Array(6)].map( (x,i) =>
+                  <g>
+                      <line x1={baseline} y1={baseline + i * 50} x2={maxwidth} y2={baseline + i * 50} stroke="rgb(255,0,0)" stroke-width= "1" stroke-dasharray="4 1" opacity="0.6" />
+                        <text  x="27" y= {53 + i * 50} fontSize="11" fontFamily="arial" fill="black"  >
+                        {400- (i+2)  * 50}
+                      </text>
+                  </g>
+                  )
+              }
 
               {this.state.multibar.map( (val, index) =>
                       <g>

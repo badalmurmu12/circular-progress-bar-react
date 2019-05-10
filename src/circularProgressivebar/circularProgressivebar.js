@@ -16,13 +16,13 @@ class CircularProgressivebar extends React.Component{
     var CIRCUMFERENCE = 2 * Math.PI * RADIUS;
     var progress = e.target.value / 100;
     var dashoffset = CIRCUMFERENCE * (1 - progress);
-    console.log(dashoffset);
+
     this.setState({bar: e.target.value, strokeDashoffset:  dashoffset})
   }
 
 
 render(){
-  console.log(this.state);
+ 
   return( <div >
     <div id="cont" data-pct="100">
         <div id="progress-val"> {this.state.bar} %</div>

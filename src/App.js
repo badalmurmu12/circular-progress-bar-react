@@ -9,18 +9,23 @@ function App() {
   return (
     <div className="App">
     <header className="App-header">
+          <h2>Bar Chart  || Multibar Chart || Circular Progressive Bar || Doughnuts Chart</h2>
+          <h3> Built in SVG and REACT </h3>
+    </header>
+    <div className="upperdiv">
+    <div className="chart">
           <BarChart />
-    </header>
-    <header className="App-header">
+    </div>
+    <div className="chart">
           <MultiBar />
-    </header>
-      <header className="App-header">
+    </div>
+      <div className="chart ">
             <CircularProgressivebar />
-      </header>
-      <header className="App-header">
+      </div>
+      <div className="chart ">
             <DoughnutChart />
-      </header>
-
+      </div>
+      </div>
     </div>
   );
 }
